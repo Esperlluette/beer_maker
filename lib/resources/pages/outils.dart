@@ -1,4 +1,5 @@
 import 'package:beer_maker/resources/stringsfr.dart';
+import 'package:beer_maker/extensions/color_extension.dart';
 import 'package:beer_maker/resources/utils/recette.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -30,7 +31,7 @@ class _OutilsState extends State<Outils> {
   double qHoublonAmer = 0;
   double qHoublonArome = 0;
   double levure = 0;
-  String hexColor = "";
+  String hexColor = "000000";
 
   void calculs() {
     // (Volume de bière désiré en L * degré d’alcool recherché ) / 20 = Malt en k
@@ -161,7 +162,7 @@ class _OutilsState extends State<Outils> {
                     alignment: Alignment.center,
                     width: 150,
                     height: 50,
-                    color: Color(int.parse(hexColor)),
+                    color: hexColor.toColor(),
                     child: Text(hexColor),
                   )
                 ],

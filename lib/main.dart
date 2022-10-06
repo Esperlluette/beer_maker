@@ -57,25 +57,35 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Beer Maker"),
-      ),
       body: Center(
-        child: Column(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            TextButton(
-                onPressed: () => {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Guide()))
-                    },
-                child: const Text(StringsFR.guide)),
-            TextButton(
-                onPressed: () => {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => const Outils()))
-                    },
-                child: const Text(StringsFR.outils))
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [],
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                TextButton(
+                    onPressed: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Guide()))
+                        },
+                    child: const Text(StringsFR.guide)),
+                TextButton(
+                    onPressed: () => {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Outils()))
+                        },
+                    child: const Text(StringsFR.outils))
+              ],
+            )
           ],
         ),
       ),
