@@ -64,6 +64,7 @@ class _OutilsState extends State<Outils> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Color(0xFFf05e47),
           title: const Text(StringsFR.titleUtils),
         ),
         body: Column(children: [

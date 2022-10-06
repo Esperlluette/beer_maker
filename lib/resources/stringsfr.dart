@@ -1,8 +1,8 @@
 abstract class StringsFR {
   static const apptitle = "Beer maker";
 
-  static const guide = "Guide";
-  static const outils = "Outils";
+  static const guide = "Guide de fabrication ⚒";
+  static const outils = "Outils de calculs ➗";
 
   static const notice = "Entrez un nombre valide";
 

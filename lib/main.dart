@@ -46,13 +46,20 @@ class SplashScreenState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: Colors.amber,
+        color: const Color(0xFFf05e47),
         child: FlutterLogo(size: MediaQuery.of(context).size.height));
   }
 }
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
+
+  final TextStyle _style = const TextStyle(
+    color: Color(0xFFf05e47),
+    fontWeight: FontWeight.bold,
+    fontFamily: 'RobotoMono',
+
+  ); 
 
   @override
   Widget build(BuildContext context) {
@@ -63,27 +70,39 @@ class HomePage extends StatelessWidget {
           children: <Widget>[
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [],
+              children: const [
+                /**
+                 * partie droite de l'écran
+                 */
+              ],
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                TextButton(
-                    onPressed: () => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Guide()))
-                        },
-                    child: const Text(StringsFR.guide)),
-                TextButton(
-                    onPressed: () => {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const Outils()))
-                        },
-                    child: const Text(StringsFR.outils))
+                GestureDetector(
+                  onTap: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Guide()))
+                  },
+                  child: Card(
+                      child: Container(
+                        alignment: Alignment.center,
+                          width: 200,
+                          height: 50,
+                          child: Text(StringsFR.guide, style: _style,))),
+                ),
+                GestureDetector(
+                  onTap: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Outils()))
+                  },
+                  child: Card(
+                      child: Container(
+                        alignment: Alignment.center,
+                          width: 200,
+                          height: 50,
+                          child: Text(StringsFR.outils, style: _style,))),
+                ),
               ],
             )
           ],
