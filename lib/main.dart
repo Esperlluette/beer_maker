@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:beer_maker/resources/pages/guide.dart';
 import 'package:beer_maker/resources/pages/outils.dart';
+import 'package:beer_maker/resources/stringsfr.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -68,13 +69,13 @@ class HomePage extends StatelessWidget {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => const Guide()))
                     },
-                child: const Text("guide")),
+                child: const Text(StringsFR.guide)),
             TextButton(
                 onPressed: () => {
                       Navigator.push(context,
                           MaterialPageRoute(builder: (context) => const Outils()))
                     },
-                child: const Text("Outils"))
+                child: const Text(StringsFR.outils))
           ],
         ),
       ),

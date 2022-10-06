@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:beer_maker/resources/stringsfr.dart';
 import 'package:flutter/material.dart';
 
@@ -24,61 +22,49 @@ class GuideState extends State<Guide> {
   }
 
   void decrementCounter() {
-    if (_counter >= 0) {
+    if (_counter > 0) {
       _counter--;
       setState(() {});
     }
   }
 
   void setStatement() {
-    switch (_counter) {
-      case 0:
-        _titleLabel = StringsFR.guideEtapePretable[0];
-        _body = StringsFR.guideEtapePretable[1];
-        break;
-      case 1:
-        _titleLabel = StringsFR.guideEtape1[0];
-        _body = StringsFR.guideEtape1[1];
-        break;
-      case 2:
-        _titleLabel = StringsFR.guideEtape2[0];
-        _body = StringsFR.guideEtape2[1];
-        break;
-      case 3:
-        _titleLabel = StringsFR.guideEtape3[0];
-        _body = StringsFR.guideEtape3[1];
-        break;
-      case 4:
-        _titleLabel = StringsFR.guideEtape4[0];
-        _body = StringsFR.guideEtape4[1];
-        break;
-    }
-    log(_counter.toString());
+    _titleLabel = StringsFR.guidSteps[_counter][0];
+    _body = StringsFR.guidSteps[_counter][1];
   }
 
   @override
   Widget build(BuildContext context) {
     setStatement();
     return Scaffold(
-      appBar: AppBar(title: const Text(StringsFR.TitreGuide)),
+      appBar: AppBar(
+        title: const Text(StringsFR.titleGuid),
+      ),
       body: Center(
         child: Column(
           children: [
             Text(style: const TextStyle(fontSize: 20), _titleLabel),
             Text(_body),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                    onPressed: () => {decrementCounter()},
-                    icon: const Icon(Icons.skip_previous_rounded)),
-                IconButton(
-                    onPressed: () => {incrementCounter()},
-                    icon: const Icon(Icons.skip_next_rounded))
-              ],
-            ),
           ],
         ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const [
+          BottomNavigationBarItem(
+              icon: Icon(Icons.skip_previous_rounded),
+              label: StringsFR.previousStep),
+          BottomNavigationBarItem(
+              icon: Icon(Icons.skip_next),
+              label: StringsFR.nextStep)
+        ],
+        onTap: (value) {
+          if (value == 0) {
+            decrementCounter();
+
+          } else {
+            incrementCounter();
+          }
+        },
       ),
     );
   }
