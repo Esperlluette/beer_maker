@@ -70,12 +70,14 @@ class GuideState extends State<Guide> {
       onStepCancel: () {
         if (_index > 0) {
           setState(() {
+            
             _index -= 1;
           });
         }
       },
       onStepContinue: () {
-        if (_index >= 0) {
+        if (_index < 7) {
+          log(_index.toString());
           setState(() {
             _index += 1;
           });

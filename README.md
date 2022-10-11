@@ -1,16 +1,12 @@
 # beer_maker
 
-A new Flutter project.
+## Objectifs beer maker vacance :
+- Créer un serveur api pour stocker les données.
+- Pouvoir sauvegarder les recettes sur ce serveur api.
+- récupérer les recettes depuis ce serveur. 
 
-## Getting Started
+### objectif optionnel : 
+- compte pour protéger les recettes. 
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### dépendances : 
+- http

@@ -20,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const MyHomePage(title: 'Game toy'),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
@@ -57,7 +58,7 @@ class HomePage extends StatelessWidget {
   final TextStyle _style = const TextStyle(
     color: Color(0xFFf05e47),
     fontWeight: FontWeight.bold,
-    fontFamily: 'RobotoMono',
+    // fontFamily: 'RobotoMono',
 
   ); 
 

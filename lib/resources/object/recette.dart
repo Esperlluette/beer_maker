@@ -1,4 +1,91 @@
 class Recette {
+  double _volume = 0;
+  double _degre = 0;
+  double _moyenne = 0;
+
+  double malt = 0;
+  double brassage = 0;
+  double rincage = 0;
+  double houblonAmer = 0;
+  double houblonArome = 0;
+  double levure = 0;
+
+  double mcu = 0;
+  double ebc = 0;
+  double srm = 0;
+
+  String hexColor = "000000";
+
+  Recette(double volume, double degre, double moyenne) {
+    _volume = volume;
+    _degre = degre;
+    _moyenne = moyenne;
+
+    malt = (_volume * _degre) / 20;
+    rincage = malt * 2.8;
+    rincage = (_volume * 1.25) - (brassage * 0.7);
+    houblonAmer = _volume * 3;
+    houblonArome = _volume;
+    levure = _volume / 2;
+
+    mcu = 4.23 * _moyenne * malt / _volume;
+    srm = 0.508 * _moyenne;
+
+    hexColor = Recette.srmToRGB(srm);
+  }
+
+  double getMalt() {
+    return malt;
+  }
+
+  double getBrassage() {
+    return brassage;
+  }
+
+  double getRincage() {
+    return rincage;
+  }
+
+  double getHoublonAmer() {
+    return houblonAmer;
+  }
+
+  double getHoublonArome() {
+    return houblonArome;
+  }
+
+  double getLevure() {
+    return levure;
+  }
+
+  double getMCU() {
+    return mcu;
+  }
+
+  double getEBC() {
+    return ebc;
+  }
+
+  double getSRM() {
+    return srm;
+  }
+  
+  String getHEX(){
+    return hexColor;
+  }
+
+  double getVolume() {
+    return _volume;
+  }
+
+  double getDegre() {
+    return _degre;
+  }
+
+  double getMoyenne() {
+    return _moyenne;
+  }
+
   static String srmToRGB(double srm) {
 // Returns an RGB value based on SRM
     double r = 0;
