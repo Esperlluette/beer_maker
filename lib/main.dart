@@ -15,12 +15,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      title: StringsFR.apptitle,
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Game toy'),
-      debugShowCheckedModeBanner: false,
+      home: const MyHomePage(title: StringsFR.apptitle),
     );
   }
 }
@@ -48,7 +48,11 @@ class SplashScreenState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Container(
         color: const Color(0xFFf05e47),
-        child: FlutterLogo(size: MediaQuery.of(context).size.height));
+        child: const Image(
+          image: AssetImage('images/bmlogo.png'),
+          height: 100,
+          width: 100,
+        ));
   }
 }
 
@@ -58,9 +62,8 @@ class HomePage extends StatelessWidget {
   final TextStyle _style = const TextStyle(
     color: Color(0xFFf05e47),
     fontWeight: FontWeight.bold,
-    // fontFamily: 'RobotoMono',
-
-  ); 
+    fontFamily: 'RobotoMono',
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -87,10 +90,13 @@ class HomePage extends StatelessWidget {
                   },
                   child: Card(
                       child: Container(
-                        alignment: Alignment.center,
+                          alignment: Alignment.center,
                           width: 200,
                           height: 50,
-                          child: Text(StringsFR.guide, style: _style,))),
+                          child: Text(
+                            StringsFR.guide,
+                            style: _style,
+                          ))),
                 ),
                 GestureDetector(
                   onTap: () => {
@@ -99,10 +105,13 @@ class HomePage extends StatelessWidget {
                   },
                   child: Card(
                       child: Container(
-                        alignment: Alignment.center,
+                          alignment: Alignment.center,
                           width: 200,
                           height: 50,
-                          child: Text(StringsFR.outils, style: _style,))),
+                          child: Text(
+                            StringsFR.outils,
+                            style: _style,
+                          ))),
                 ),
               ],
             )
