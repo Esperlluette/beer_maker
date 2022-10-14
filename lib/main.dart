@@ -1,7 +1,9 @@
 import 'dart:async';
 
-import 'package:beer_maker/resources/pages/guide.dart';
-import 'package:beer_maker/resources/pages/outils.dart';
+import 'package:beer_maker/pages/beerListing.dart';
+import 'package:beer_maker/resources/object/appcolor.dart';
+import 'package:beer_maker/pages/guide.dart';
+import 'package:beer_maker/pages/outils.dart';
 import 'package:beer_maker/resources/stringsfr.dart';
 import 'package:flutter/material.dart';
 
@@ -47,7 +49,7 @@ class SplashScreenState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-        color: const Color(0xFFf05e47),
+        color: const Color(AppColor.appcolor),
         child: const Image(
           image: AssetImage('images/bmlogo.png'),
           height: 100,
@@ -60,7 +62,7 @@ class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   final TextStyle _style = const TextStyle(
-    color: Color(0xFFf05e47),
+    color: Color(AppColor.appcolor),
     fontWeight: FontWeight.bold,
     fontFamily: 'RobotoMono',
   );
@@ -110,6 +112,21 @@ class HomePage extends StatelessWidget {
                           height: 50,
                           child: Text(
                             StringsFR.outils,
+                            style: _style,
+                          ))),
+                ),
+                GestureDetector(
+                  onTap: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Beerlist()))
+                  },
+                  child: Card(
+                      child: Container(
+                          alignment: Alignment.center,
+                          width: 200,
+                          height: 50,
+                          child: Text(
+                            StringsFR.beerlist,
                             style: _style,
                           ))),
                 ),

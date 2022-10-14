@@ -1,3 +1,4 @@
+import 'package:beer_maker/resources/object/appcolor.dart';
 import 'package:beer_maker/resources/stringsfr.dart';
 import 'package:beer_maker/extensions/color_extension.dart';
 import 'package:beer_maker/resources/object/recette.dart';
@@ -33,7 +34,7 @@ class _OutilsState extends State<Outils> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color(0xFFf05e47),
+          backgroundColor: const Color(AppColor.appcolor),
           title: const Text(StringsFR.titleUtils),
         ),
         body: Container(

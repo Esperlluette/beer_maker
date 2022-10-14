@@ -1,6 +1,7 @@
 abstract class StringsFR {
   static const apptitle = "Beer maker";
 
+  static const beerlist ="Liste des recettes";
   static const guide = "Guide de fabrication ⚒";
   static const outils = "Outils de calculs ➗";
 
