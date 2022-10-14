@@ -1,6 +1,8 @@
 abstract class StringsFR {
   static const apptitle = "Beer maker";
 
+  static const fetchException ='Impossible de récupérer les ressources';
+
   static const beerlist ="Liste des recettes";
   static const guide = "Guide de fabrication ⚒";
   static const outils = "Outils de calculs ➗";

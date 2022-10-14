@@ -1,6 +1,4 @@
 // ignore_for_file: unnecessary_this
-
-
 class Beer {
   late double volume;
   late double degre;
@@ -17,6 +15,8 @@ class Beer {
   late String nom;
   late String description;
   late String privacy;
+
+
 
   get getVolume => this.volume;
 

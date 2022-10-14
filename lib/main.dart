@@ -117,8 +117,10 @@ class HomePage extends StatelessWidget {
                 ),
                 GestureDetector(
                   onTap: () => {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Beerlist()))
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const Beerlist()))
                   },
                   child: Card(
                       child: Container(
