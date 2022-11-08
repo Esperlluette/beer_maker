@@ -4,28 +4,26 @@ import 'package:beer_maker/resources/stringsfr.dart';
 import 'package:flutter/material.dart';
 
 class BeerCardFactrory {
-  static Column factory(map) {
-    if (map != null) {
-      log(map.toString());
+  static Column factory(beers) {
+    if (beers != null) {
+      log(beers.toString());
       Column col = Column(
         children: [
-          for (var beer in map) ...{
-            const Card(
-              child: SizedBox(
-                width: 300,
-                height: 100,
-                child: Text("data"),
-              ),
-            )
+          for (var beer in beers) ...{
+            GestureDetector(
+              onTap: null,
+                child: SizedBox(
+              width: 300,
+              height: 50,
+              child: Text(beer["nom"].toString()),
+            ))
           }
         ],
       );
       return col;
-    }else {
+    } else {
       return Column(
-        children: const [
-          Text(StringsFR.fetchException)
-        ],
+        children: const [Text(StringsFR.fetchException)],
       );
     }
   }
