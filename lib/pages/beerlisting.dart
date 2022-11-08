@@ -20,7 +20,7 @@ class BeerlistState extends State<Beerlist> {
   final GlobalKey<RefreshIndicatorState> _refreshIndicatorKey =
       GlobalKey<RefreshIndicatorState>();
 
-  late var beers;
+  var beers = [];
   bool fetchBeers = false;
   late Widget _body;
 
@@ -59,6 +59,17 @@ class BeerlistState extends State<Beerlist> {
   @override
   Widget build(BuildContext context) {
     fetchBeersList();
+    if (!fetchBeers) {
+      _body = Center(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text("Data"),
+          ],
+        ),
+      );
+    }
     return Scaffold(
         appBar: AppBar(
           title: const Text(StringsFR.beerlist),

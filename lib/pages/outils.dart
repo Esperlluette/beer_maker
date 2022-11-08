@@ -155,7 +155,7 @@ class _OutilsState extends State<Outils> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(
-                                      StringsFR.mcu + beer.getMCU().toString()),
+                                      StringsFR.mcu + beer.getMCU().floor().toString()),
                                   Text(StringsFR.ebc + _moyenne.toString()),
                                   Text(StringsFR.srm + beer.getSRM().toString())
                                 ],
